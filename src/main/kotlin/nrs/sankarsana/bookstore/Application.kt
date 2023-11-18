@@ -6,8 +6,11 @@ import io.ktor.server.netty.*
 import nrs.sankarsana.bookstore.features.booksRouting
 import nrs.sankarsana.bookstore.plugins.testRouting
 import nrs.sankarsana.bookstore.plugins.configureSerialization
+import nrs.sankarsana.bookstore.plugins.connectDatabase
 
 fun main() {
+    connectDatabase()
+    
     embeddedServer(
         factory = Netty,
         port = 8080,

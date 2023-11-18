@@ -6,5 +6,4 @@ import kotlinx.serialization.Serializable
 class Book(
     val id: Int,
     val name: String,
-    val price: Int,
 )
