@@ -3,6 +3,7 @@ package nrs.sankarsana.bookstore
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import nrs.sankarsana.bookstore.features.booksRouting
 import nrs.sankarsana.bookstore.plugins.testRouting
 import nrs.sankarsana.bookstore.plugins.configureSerialization
 
@@ -18,4 +19,5 @@ fun main() {
 fun Application.module() {
     configureSerialization()
     testRouting()
+    booksRouting()
 }
