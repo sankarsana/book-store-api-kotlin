@@ -9,7 +9,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
 }
 
-group = "nrs.sankarsana"
+group = "nrs.sankarsana.bookstore"
 version = "0.0.1"
 
 application {

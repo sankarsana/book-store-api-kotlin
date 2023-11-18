@@ -1,17 +1,17 @@
-package nrs.sankarsana
+package nrs.sankarsana.bookstore
 
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.testing.*
+import nrs.sankarsana.bookstore.plugins.testRouting
 import kotlin.test.*
-import nrs.sankarsana.plugins.*
 
 class ApplicationTest {
     @Test
     fun testRoot() = testApplication {
         application {
-            configureRouting()
+            testRouting()
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
