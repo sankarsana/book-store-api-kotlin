@@ -1,1 +1,1 @@
-rootProject.name = "nrs.sankarsana.book-store"
+rootProject.name = "book-store"

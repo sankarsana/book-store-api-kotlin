@@ -8,12 +8,13 @@ import nrs.sankarsana.bookstore.plugins.testRouting
 import kotlin.test.*
 
 class ApplicationTest {
+
     @Test
     fun testRoot() = testApplication {
         application {
             testRouting()
         }
-        client.get("/").apply {
+        client.get("/test").apply {
             assertEquals(HttpStatusCode.OK, status)
             assertEquals("Hello World!", bodyAsText())
         }
