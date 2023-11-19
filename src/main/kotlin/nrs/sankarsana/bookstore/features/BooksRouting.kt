@@ -7,7 +7,7 @@ import org.koin.ktor.ext.inject
 
 fun Application.booksRouting() {
 
-    val controller by inject<BooksController>()
+    val controller: BooksController by inject()
 
     routing {
         get("/books") {

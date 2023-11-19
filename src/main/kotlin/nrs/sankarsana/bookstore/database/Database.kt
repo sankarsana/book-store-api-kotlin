@@ -1,7 +1,10 @@
 package nrs.sankarsana.bookstore.database
 
 import io.ktor.server.config.yaml.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.transactions.transaction
 
 fun connectDatabase() {
     val configs = YamlConfig("postgres.yaml")
@@ -15,6 +18,10 @@ fun connectDatabase() {
 
 private fun YamlConfig?.get(path: String): String {
     return this?.property(path)?.getString() ?: ""
+}
+
+suspend fun<T> query(block: () -> T): T = withContext(Dispatchers.IO) {
+    transaction { block() }
 }
 
 private const val ENV = "services.postgres.environment"

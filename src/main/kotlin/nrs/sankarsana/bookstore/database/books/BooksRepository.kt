@@ -1,12 +1,12 @@
 package nrs.sankarsana.bookstore.database.books
 
+import nrs.sankarsana.bookstore.database.query
 import nrs.sankarsana.bookstore.features.Book
-import org.jetbrains.exposed.sql.transactions.transaction
 
 class BooksRepository {
 
-    fun getAll(): List<Book> {
-        return transaction {
+    suspend fun getAll(): List<Book> {
+        return query {
             BookEntity.all().map(::toBook)
         }
     }

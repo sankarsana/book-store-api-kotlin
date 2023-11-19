@@ -8,7 +8,7 @@ class BooksController(
     private val repository: BooksRepository,
 ) {
 
-    fun getAll(): List<Book> {
+    suspend fun getAll(): List<Book> {
         return repository.getAll()
     }
 }
