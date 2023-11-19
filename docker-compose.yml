@@ -4,9 +4,8 @@ services:
     image: postgres:latest
     ports:
       - 5432:5432
-    extends:
-      file: postgres.yaml
-      service: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=books
       
-volumes: 
-    postgres:

@@ -1,6 +1,12 @@
+version: '3'
 ktor:
   application:
     modules:
       - nrs.sankarsana.bookstore.ApplicationKt.module
   deployment:
     port: 8080
+
+db:
+  url: "jdbc:postgresql://localhost:5432/books"
+  user: "postgres"
+  password: "12345"
