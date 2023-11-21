@@ -8,9 +8,10 @@ import org.koin.ktor.ext.inject
 
 fun Route.booksRoute() {
 
-    val controller: BooksService by inject()
+    val service by inject<BooksService>()
 
     get(ApiPath.BOOKS) {
-        call.respond(controller.getAll())
+        val response = service(Unit)
+        call.respond(response)
     }
 }
