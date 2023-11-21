@@ -14,5 +14,6 @@ fun BookEntity.map(writerEntity: WriterEntity): Book {
 }
 
 private fun WriterEntity.map() = Writer(
-    name = this.name,
+    id = id.value,
+    name = name,
 )
