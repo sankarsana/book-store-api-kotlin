@@ -5,7 +5,8 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.routing.*
 import io.ktor.server.testing.*
-import nrs.sankarsana.bookstore.plugins.testRoute
+import nrs.sankarsana.bookstore.features.test.testRoute
+import nrs.sankarsana.bookstore.util.ApiPath
 import kotlin.test.*
 
 class ApplicationTest {
@@ -17,7 +18,7 @@ class ApplicationTest {
                 testRoute()
             }
         }
-        client.get("/test").apply {
+        client.get(ApiPath.TEST).apply {
             assertEquals(HttpStatusCode.OK, status)
             assertEquals("Hello World!", bodyAsText())
         }
