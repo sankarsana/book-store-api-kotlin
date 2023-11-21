@@ -21,7 +21,7 @@ fun Application.module() {
 
     initKoin()
 
-    connectDatabase(environment)
+    connectDatabase()
 
     routing {
         testRoute()
