@@ -5,10 +5,10 @@ import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.dao.id.IntIdTable
 
-class Writer (id: EntityID<Int>): IntEntity(id) {
+class WriterEntity(id: EntityID<Int>) : IntEntity(id) {
     var name by Writers.name
-    
-    companion object:IntEntityClass<Writer>(Writers)
+
+    companion object : IntEntityClass<WriterEntity>(Writers)
 }
 
 private object Writers: IntIdTable() {

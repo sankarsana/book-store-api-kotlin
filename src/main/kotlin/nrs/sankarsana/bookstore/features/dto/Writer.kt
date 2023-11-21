@@ -1,9 +1,9 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.features.dto
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Book(
-    val id: Int,
+@Suppress("unused")
+class Writer(
     val name: String,
 )
