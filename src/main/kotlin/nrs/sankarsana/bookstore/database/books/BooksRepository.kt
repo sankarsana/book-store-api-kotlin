@@ -1,7 +1,7 @@
 package nrs.sankarsana.bookstore.database.books
 
 import nrs.sankarsana.bookstore.database.query
-import nrs.sankarsana.bookstore.features.Book
+import nrs.sankarsana.bookstore.features.books.Book
 
 class BooksRepository {
 

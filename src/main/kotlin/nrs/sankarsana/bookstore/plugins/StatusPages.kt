@@ -8,7 +8,7 @@ import io.ktor.server.response.*
 fun Application.installStatusPages() {
     install(StatusPages) {
         exception<Throwable> { call, cause ->
-            call.respondText(text = "500: $cause", status = HttpStatusCode.InternalServerError)
+            call.respondText(text = cause.message.toString(), status = HttpStatusCode.InternalServerError)
         }
     }
 }

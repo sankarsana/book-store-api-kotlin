@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.features
+package nrs.sankarsana.bookstore.features.books
 
 import kotlinx.serialization.Serializable
 

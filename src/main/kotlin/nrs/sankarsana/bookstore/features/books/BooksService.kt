@@ -1,10 +1,8 @@
-package nrs.sankarsana.bookstore.features
+package nrs.sankarsana.bookstore.features.books
 
-import nrs.sankarsana.bookstore.database.books.BookEntity
 import nrs.sankarsana.bookstore.database.books.BooksRepository
-import org.jetbrains.exposed.sql.transactions.transaction
 
-class BooksController(
+class BooksService(
     private val repository: BooksRepository,
 ) {
 
