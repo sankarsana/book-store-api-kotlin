@@ -1,25 +1,19 @@
 package nrs.sankarsana.bookstore.database
 
-import io.ktor.server.config.yaml.*
+import io.github.cdimascio.dotenv.dotenv
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
 
-suspend fun <T> query(block: () -> T): T = withContext(Dispatchers.IO) {
-    transaction { block() }
-}
-
 fun connectDatabase() {
-    val config = YamlConfig("application.yaml")
-    val path = "services.db.environment"
-    val url = config.get("$path.URL")
-    val user = config.get("$path.POSTGRES_USER")
-    val password = config.get("$path.POSTGRES_PASSWORD")
-
+    val env = dotenv { filename = "postgres.env" }
+    val url = env["URL"]
+    val user = env["POSTGRES_USER"]
+    val password = env["POSTGRES_PASSWORD"]
     Database.connect(url = url, user = user, password = password)
 }
 
-private fun YamlConfig?.get(path: String): String {
-    return this?.property(path)?.getString() ?: ""
+suspend fun <T> query(block: () -> T): T = withContext(Dispatchers.IO) {
+    transaction { block() }
 }

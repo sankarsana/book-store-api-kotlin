@@ -13,7 +13,7 @@ import nrs.sankarsana.bookstore.features.test.testRoute
 
 fun main(args: Array<String>): Unit = EngineMain.main(args)
 
-@Suppress("unused") // Executing from /src/main/resources/application.yaml
+@Suppress("UNUSED")
 fun Application.module() {
     install(DefaultHeaders)
     installStatusPages()

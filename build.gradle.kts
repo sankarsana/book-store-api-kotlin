@@ -27,11 +27,12 @@ repositories {
 dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
-    implementation("io.ktor:ktor-server-config-yaml")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("io.ktor:ktor-server-default-headers-jvm")
     implementation("io.ktor:ktor-server-status-pages-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
+
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
@@ -43,8 +44,6 @@ dependencies {
 
     implementation("io.insert-koin:koin-ktor:$koin_version")
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
-
-//    implementation("org.flywaydb:flyway-core:9.20.1")
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
