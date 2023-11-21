@@ -44,7 +44,7 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:$koin_version")
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
 
-    implementation("org.flywaydb:flyway-core:9.20.1")
+//    implementation("org.flywaydb:flyway-core:9.20.1")
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
