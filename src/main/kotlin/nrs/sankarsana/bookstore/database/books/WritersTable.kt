@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.database.writers
+package nrs.sankarsana.bookstore.database.books
 
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass

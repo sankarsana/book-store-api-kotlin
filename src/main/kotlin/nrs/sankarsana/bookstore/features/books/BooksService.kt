@@ -1,7 +1,5 @@
 package nrs.sankarsana.bookstore.features.books
 
-import nrs.sankarsana.bookstore.database.books.BooksRepository
-
 class BooksService(
     private val repository: BooksRepository,
 ) {
