@@ -9,6 +9,7 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
+import java.io.FileNotFoundException
 
 suspend fun <T> query(block: () -> T): T = withContext(Dispatchers.IO) {
     transaction { block() }
@@ -40,12 +41,12 @@ private fun createTables() = transaction {
 }
 
 private fun addRows() = transaction {
-    val file = File("src/main/resources/sql/content.sql")
-    if (file.exists().not()) {
-        return@transaction
-    }
-    val commands = file.readText().split(";")
-    for (command in commands) {
-        exec(command.trim())
+    try {
+        File("src/main/resources/sql/content.sql")
+            .readText()
+            .split(";")
+            .forEach { exec(it.trim()) }
+    } catch (e: FileNotFoundException) {
+        e.printStackTrace()
     }
 }
