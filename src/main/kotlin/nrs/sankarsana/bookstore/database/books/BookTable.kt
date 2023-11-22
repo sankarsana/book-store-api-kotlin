@@ -10,12 +10,14 @@ object BooksTable : IntIdTable("books") {
     val name = varchar("name", 100)
     val shortName = varchar("short_name", 10).nullable()
     val writerId = integer("writer_id")
+    val quantityActual = integer("quantity_actual")
 }
 
 class BookEntity(id: EntityID<Int>) : IntEntity(id) {
     var name by BooksTable.name
     var shortName by BooksTable.shortName
     var writerId by BooksTable.writerId
+    var quantityActual by BooksTable.quantityActual
 
     companion object : IntEntityClass<BookEntity>(BooksTable)
 }
@@ -25,5 +27,6 @@ fun BookEntity.toBook() = Book(
     name = name,
     shortName = shortName,
     writerId = writerId,
+    quantityActual = quantityActual,
 )
 
