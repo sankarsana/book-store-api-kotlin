@@ -20,12 +20,10 @@ class BookEntity(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<BookEntity>(BooksTable)
 }
 
-fun BookEntity.map(writerEntity: WriterEntity): Book {
-    return Book(
-        id = id.value,
-        name = name,
-        shortName = shortName,
-        writer = writerEntity.map(),
-    )
-}
+fun BookEntity.toBook() = Book(
+    id = id.value,
+    name = name,
+    shortName = shortName,
+    writerId = writerId,
+)
 

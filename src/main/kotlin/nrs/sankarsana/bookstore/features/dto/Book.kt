@@ -8,5 +8,5 @@ class Book(
     val id: Int,
     val name: String,
     val shortName: String?,
-    val writer: Writer,
+    val writerId: Int,
 )
