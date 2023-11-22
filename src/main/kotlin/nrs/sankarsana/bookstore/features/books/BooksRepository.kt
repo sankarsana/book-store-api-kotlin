@@ -2,6 +2,7 @@ package nrs.sankarsana.bookstore.features.books
 
 import nrs.sankarsana.bookstore.database.books.BookEntity
 import nrs.sankarsana.bookstore.database.books.WriterEntity
+import nrs.sankarsana.bookstore.database.books.map
 import nrs.sankarsana.bookstore.database.query
 import nrs.sankarsana.bookstore.features.dto.Book
 
