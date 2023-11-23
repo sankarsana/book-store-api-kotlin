@@ -3,6 +3,7 @@ package nrs.sankarsana.bookstore.database
 import io.github.cdimascio.dotenv.dotenv
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import nrs.sankarsana.bookstore.database.books.BooksMovementTable
 import nrs.sankarsana.bookstore.database.books.BooksTable
 import nrs.sankarsana.bookstore.database.books.WritersTable
 import org.jetbrains.exposed.sql.Database
@@ -37,12 +38,13 @@ private fun createTables() = transaction {
     SchemaUtils.create(
         BooksTable,
         WritersTable,
+        BooksMovementTable,
     )
 }
 
 private fun addRows() = transaction {
     try {
-        File("src/main/resources/sql/content.sql")
+        File("src/main/resources/sql/content_filler.sql")
             .readText()
             .split(";")
             .forEach { exec(it.trim()) }

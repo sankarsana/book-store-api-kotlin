@@ -14,15 +14,15 @@ object BooksTable : IntIdTable("books") {
 }
 
 class BookEntity(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<BookEntity>(BooksTable)
+
     var name by BooksTable.name
     var shortName by BooksTable.shortName
     var writerId by BooksTable.writerId
     var quantityActual by BooksTable.quantityActual
-
-    companion object : IntEntityClass<BookEntity>(BooksTable)
 }
 
-fun BookEntity.toBook() = Book(
+fun BookEntity.toDomain() = Book(
     id = id.value,
     name = name,
     shortName = shortName,

@@ -11,12 +11,12 @@ object WritersTable : IntIdTable() {
 }
 
 class WriterEntity(id: EntityID<Int>) : IntEntity(id) {
-    var name by WritersTable.name
-
     companion object : IntEntityClass<WriterEntity>(WritersTable)
+
+    var name by WritersTable.name
 }
 
-fun WriterEntity.map() = Writer(
+fun WriterEntity.toDomain() = Writer(
     id = id.value,
     name = name,
 )
