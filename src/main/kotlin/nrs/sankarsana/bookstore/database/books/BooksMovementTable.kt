@@ -10,7 +10,7 @@ import org.jetbrains.exposed.sql.jodatime.date
 
 object BooksMovementTable : IntIdTable("books_movement") {
     val date = date("date")
-    val bookId = integer("book_id")
+    val bookId = integer("book_id").index()
     val type = varchar("type", 10)
     val quantity = integer("quantity")
 }
