@@ -13,6 +13,7 @@ object BooksMovementTable : IntIdTable("books_movement") {
     val bookId = integer("book_id").index()
     val type = varchar("type", 10)
     val quantity = integer("quantity")
+    val version = integer("version").default(0)
 }
 
 class BookMovementEntity(id: EntityID<Int>) : IntEntity(id) {

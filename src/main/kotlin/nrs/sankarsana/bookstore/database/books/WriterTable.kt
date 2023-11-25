@@ -8,6 +8,7 @@ import org.jetbrains.exposed.dao.id.IntIdTable
 
 object WritersTable : IntIdTable() {
     val name = varchar("name", 50)
+    val version = integer("version").default(0)
 }
 
 class WriterEntity(id: EntityID<Int>) : IntEntity(id) {

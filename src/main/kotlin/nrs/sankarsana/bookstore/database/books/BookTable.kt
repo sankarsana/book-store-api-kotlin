@@ -11,6 +11,7 @@ object BooksTable : IntIdTable("books") {
     val shortName = varchar("short_name", 10).nullable()
     val writerId = integer("writer_id")
     val quantityActual = integer("quantity_actual")
+    val version = integer("version").default(0)
 }
 
 class BookEntity(id: EntityID<Int>) : IntEntity(id) {
