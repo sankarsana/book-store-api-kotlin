@@ -8,7 +8,7 @@ paths:
       summary: Получение отсутсвующий базы
       parameters:
         - name: database_version
-          in: header
+          in: query
           schema:
             type: integer
             format: int64
