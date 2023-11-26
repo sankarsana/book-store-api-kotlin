@@ -9,6 +9,7 @@ import nrs.sankarsana.bookstore.di.initKoin
 import nrs.sankarsana.bookstore.features.books.booksRoute
 import nrs.sankarsana.bookstore.plugins.configureSerialization
 import nrs.sankarsana.bookstore.plugins.installStatusPages
+import nrs.sankarsana.bookstore.plugins.swaggerRoute
 
 fun main(args: Array<String>): Unit = EngineMain.main(args)
 
@@ -24,5 +25,7 @@ fun Application.module() {
 
     routing {
         booksRoute()
+
+        swaggerRoute()
     }
 }

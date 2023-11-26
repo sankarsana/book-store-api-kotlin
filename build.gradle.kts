@@ -30,6 +30,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("io.ktor:ktor-server-default-headers-jvm")
     implementation("io.ktor:ktor-server-status-pages-jvm")
+    implementation("io.ktor:ktor-server-swagger-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
 
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")

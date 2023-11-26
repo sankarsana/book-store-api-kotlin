@@ -9,7 +9,7 @@ class GetBooksController(
 ) {
     suspend operator fun invoke(call: ApplicationCall) {
         val booksRequest = BooksRequest(
-            clientDbVersion = call.request.headers["Database-version"]?.toInt()
+            clientDbVersion = call.request.headers["database_version"]?.toInt()
         )
         val response = getBooksUseCase(booksRequest)
         call.respond(response)
