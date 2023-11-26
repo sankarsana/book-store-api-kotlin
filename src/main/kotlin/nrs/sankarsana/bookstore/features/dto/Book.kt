@@ -9,5 +9,6 @@ class Book(
     val name: String,
     val shortName: String?,
     val writerId: Int,
-    val quantityActual: Int,
+    val price: Int,
+    val quantity: Int,
 )

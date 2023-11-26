@@ -6,9 +6,9 @@ import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
 import org.koin.ktor.ext.getKoin
 
-inline fun <reified T : Any> PipelineContext<Unit, ApplicationCall>.inject(
+inline fun <reified T : Any> PipelineContext<Unit, ApplicationCall>.provide(
     qualifier: Qualifier? = null,
     noinline parameters: ParametersDefinition? = null,
-): Lazy<T> {
-    return lazy { application.getKoin().get<T>(qualifier, parameters) }
+): T {
+    return application.getKoin().get<T>(qualifier, parameters)
 }

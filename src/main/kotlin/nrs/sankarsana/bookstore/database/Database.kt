@@ -8,11 +8,12 @@ import nrs.sankarsana.bookstore.database.books.BooksTable
 import nrs.sankarsana.bookstore.database.books.WritersTable
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.Transaction
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
 import java.io.FileNotFoundException
 
-suspend fun <T> query(block: () -> T): T = withContext(Dispatchers.IO) {
+suspend fun <T> query(block: Transaction.() -> T): T = withContext(Dispatchers.IO) {
     transaction { block() }
 }
 

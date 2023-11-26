@@ -10,7 +10,8 @@ object BooksTable : IntIdTable("books") {
     val name = varchar("name", 100)
     val shortName = varchar("short_name", 10).nullable()
     val writerId = integer("writer_id")
-    val quantityActual = integer("quantity_actual")
+    val price = integer("price")
+    val quantity = integer("quantity")
     val version = integer("version").default(0)
 }
 
@@ -20,7 +21,8 @@ class BookEntity(id: EntityID<Int>) : IntEntity(id) {
     var name by BooksTable.name
     var shortName by BooksTable.shortName
     var writerId by BooksTable.writerId
-    var quantityActual by BooksTable.quantityActual
+    var price by BooksTable.price
+    var quantity by BooksTable.quantity
 }
 
 fun BookEntity.toDomain() = Book(
@@ -28,6 +30,7 @@ fun BookEntity.toDomain() = Book(
     name = name,
     shortName = shortName,
     writerId = writerId,
-    quantityActual = quantityActual,
+    price = price,
+    quantity = quantity,
 )
 

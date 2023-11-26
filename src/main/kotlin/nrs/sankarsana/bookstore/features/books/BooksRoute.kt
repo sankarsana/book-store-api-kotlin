@@ -5,20 +5,17 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import nrs.sankarsana.bookstore.features.dto.BooksDeliveryRemote
-import nrs.sankarsana.bookstore.util.ApiPath
-import nrs.sankarsana.bookstore.util.inject
+import nrs.sankarsana.bookstore.util.provide
 
-fun Route.booksRoute() {
+fun Route.booksRoute() = route("/books") {
 
-    get(ApiPath.BOOKS) {
-        val service by inject<BooksService>()
-        call.respond(service())
-    }
+    get { provide<GetBooksController>()(call) }
 
-    post(ApiPath.BOOKS_DELIVERY) {
-        val payload = call.receive<BooksDeliveryRemote>()
-        val service by inject<BooksDeliveryService>()
-        val response = service(payload)
-        call.respond(response)
+    route("/delivery") {
+        post {
+            val payload = call.receive<BooksDeliveryRemote>()
+            val response = provide<BooksDeliveryService>()(payload)
+            call.respond(response)
+        }
     }
 }
