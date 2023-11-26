@@ -11,6 +11,8 @@ fun Route.booksRoute() = route("/books") {
 
     get { provide<GetBooksController>()(call) }
 
+    post { provide<PostBookController>()(call) }
+
     route("/delivery") {
         post {
             val payload = call.receive<BooksDeliveryRemote>()

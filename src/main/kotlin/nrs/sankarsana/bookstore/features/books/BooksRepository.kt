@@ -2,10 +2,7 @@ package nrs.sankarsana.bookstore.features.books
 
 import nrs.sankarsana.bookstore.database.books.*
 import nrs.sankarsana.bookstore.database.query
-import nrs.sankarsana.bookstore.features.dto.BookMovement
-import nrs.sankarsana.bookstore.features.dto.BookMovementType
-import nrs.sankarsana.bookstore.features.dto.BooksDeliveryRemote
-import nrs.sankarsana.bookstore.features.dto.BooksResponse
+import nrs.sankarsana.bookstore.features.dto.*
 import org.jetbrains.exposed.sql.Transaction
 
 class BooksRepository {
@@ -36,6 +33,26 @@ class BooksRepository {
                 quantity = item.quantity
             }.toDomain()
         }
+    }
+
+    suspend fun insert(books: List<AddNewBook>): AddNewBooksResponse = query {
+        val ids = books.map { book ->
+            val bookEntity = BookEntity.new {
+                name = book.name
+                shortName = book.shortName
+                writerId = book.writerId
+                price = book.price
+                quantity = 0
+            }
+            AddNewBooksResponse.Id(
+                old = book.id,
+                new = bookEntity.id.value,
+            )
+        }
+        AddNewBooksResponse(
+            dbVersion = getCurrentDbVersion(),
+            ids = ids
+        )
     }
 
     private companion object {
