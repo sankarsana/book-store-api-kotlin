@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.features.dto
+package nrs.sankarsana.bookstore.dto
 
 enum class BookMovementType {
 

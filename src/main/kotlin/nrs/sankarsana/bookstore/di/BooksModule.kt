@@ -1,6 +1,6 @@
 package nrs.sankarsana.bookstore.di
 
-import nrs.sankarsana.bookstore.features.books.*
+import nrs.sankarsana.bookstore.service.*
 import org.koin.dsl.module
 
 val booksModule = module {

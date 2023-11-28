@@ -1,8 +1,8 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.service
 
-import nrs.sankarsana.bookstore.database.books.*
-import nrs.sankarsana.bookstore.database.query
-import nrs.sankarsana.bookstore.features.dto.*
+import nrs.sankarsana.bookstore.dto.*
+import nrs.sankarsana.bookstore.repository.query
+import nrs.sankarsana.bookstore.repository.table.*
 import org.jetbrains.exposed.sql.Transaction
 
 class BooksRepository {

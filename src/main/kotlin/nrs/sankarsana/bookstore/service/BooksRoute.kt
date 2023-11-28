@@ -1,10 +1,10 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.service
 
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import nrs.sankarsana.bookstore.features.dto.BooksDeliveryRemote
+import nrs.sankarsana.bookstore.dto.BooksDeliveryRemote
 import nrs.sankarsana.bookstore.util.provide
 
 fun Route.booksRoute() = route("/books") {

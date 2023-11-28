@@ -1,7 +1,7 @@
-package nrs.sankarsana.bookstore.database.books
+package nrs.sankarsana.bookstore.repository.table
 
-import nrs.sankarsana.bookstore.features.dto.BookMovement
-import nrs.sankarsana.bookstore.features.dto.BookMovementType
+import nrs.sankarsana.bookstore.dto.BookMovement
+import nrs.sankarsana.bookstore.dto.BookMovementType
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID

@@ -1,11 +1,11 @@
-package nrs.sankarsana.bookstore.database
+package nrs.sankarsana.bookstore.repository
 
 import io.github.cdimascio.dotenv.dotenv
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import nrs.sankarsana.bookstore.database.books.BooksMovementTable
-import nrs.sankarsana.bookstore.database.books.BooksTable
-import nrs.sankarsana.bookstore.database.books.WritersTable
+import nrs.sankarsana.bookstore.repository.table.BooksMovementTable
+import nrs.sankarsana.bookstore.repository.table.BooksTable
+import nrs.sankarsana.bookstore.repository.table.WritersTable
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.Transaction

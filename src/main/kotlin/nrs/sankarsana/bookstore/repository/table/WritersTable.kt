@@ -1,6 +1,6 @@
-package nrs.sankarsana.bookstore.database.books
+package nrs.sankarsana.bookstore.repository.table
 
-import nrs.sankarsana.bookstore.features.dto.Writer
+import nrs.sankarsana.bookstore.dto.Writer
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID

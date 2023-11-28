@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.service
 
 import io.ktor.server.application.*
 import io.ktor.server.response.*

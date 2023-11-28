@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.plugins
+package nrs.sankarsana.bookstore.util
 
 import io.ktor.server.plugins.swagger.*
 import io.ktor.server.routing.*

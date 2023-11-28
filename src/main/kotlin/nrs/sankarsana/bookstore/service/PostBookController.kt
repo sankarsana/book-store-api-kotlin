@@ -1,9 +1,9 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.service
 
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import nrs.sankarsana.bookstore.features.dto.AddNewBook
+import nrs.sankarsana.bookstore.dto.AddNewBook
 
 class PostBookController(
     private val useCase: AddNewBookUseCase,

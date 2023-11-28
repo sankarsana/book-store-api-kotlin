@@ -1,4 +1,4 @@
-package nrs.sankarsana.bookstore.plugins
+package nrs.sankarsana.bookstore.util
 
 import io.ktor.http.*
 import io.ktor.server.application.*

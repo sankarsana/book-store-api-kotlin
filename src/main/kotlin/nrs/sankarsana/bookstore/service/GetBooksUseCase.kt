@@ -1,6 +1,6 @@
-package nrs.sankarsana.bookstore.features.books
+package nrs.sankarsana.bookstore.service
 
-import nrs.sankarsana.bookstore.features.dto.BooksResponse
+import nrs.sankarsana.bookstore.dto.BooksResponse
 
 class GetBooksUseCase(
     private val repository: BooksRepository,
