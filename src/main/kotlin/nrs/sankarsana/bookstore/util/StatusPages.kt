@@ -15,10 +15,10 @@ fun Application.installStatusPages() = install(StatusPages) {
         )
     }
 
-        exception<Throwable> { call, cause ->
-            call.respondText(
-                text = cause.message.toString(),
-                status = HttpStatusCode.InternalServerError
-            )
-        }
+    exception<Throwable> { call, cause ->
+        call.respondText(
+            text = cause.message.toString(),
+            status = HttpStatusCode.InternalServerError
+        )
     }
+}
