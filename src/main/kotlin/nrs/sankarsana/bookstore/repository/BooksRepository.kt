@@ -1,7 +1,6 @@
-package nrs.sankarsana.bookstore.service
+package nrs.sankarsana.bookstore.repository
 
 import nrs.sankarsana.bookstore.dto.*
-import nrs.sankarsana.bookstore.repository.query
 import nrs.sankarsana.bookstore.repository.table.*
 import org.jetbrains.exposed.sql.Transaction
 

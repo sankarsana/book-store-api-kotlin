@@ -7,10 +7,8 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import org.joda.time.DateTime
 
-fun Application.configureSerialization() {
-    install(ContentNegotiation) {
-        json(json)
-    }
+fun Application.configureSerialization() = install(ContentNegotiation) {
+    json(json)
 }
 
 private val json = Json {

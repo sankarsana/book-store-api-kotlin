@@ -1,5 +1,6 @@
 package nrs.sankarsana.bookstore.di
 
+import nrs.sankarsana.bookstore.repository.BooksRepository
 import nrs.sankarsana.bookstore.service.*
 import org.koin.dsl.module
 

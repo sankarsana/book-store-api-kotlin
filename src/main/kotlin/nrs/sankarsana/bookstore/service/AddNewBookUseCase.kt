@@ -3,6 +3,7 @@ package nrs.sankarsana.bookstore.service
 import nrs.sankarsana.bookstore.dto.AddNewBook
 import nrs.sankarsana.bookstore.dto.AddNewBooksResponse
 import nrs.sankarsana.bookstore.exception.ForbiddenException
+import nrs.sankarsana.bookstore.repository.BooksRepository
 
 class AddNewBookUseCase(
     private val repository: BooksRepository,
